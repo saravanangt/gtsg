@@ -21,8 +21,8 @@ app.post('/process_post', urlencodedParser, function (req, res) {
   ]
 }
  var str='';
-jsonQuery('people[country=NZ].name', {data: data},function(){
- for (var value of data.people) {
+var result=jsonQuery('people[country=NZ].name', {data: data}).value;
+ for (var value of result.people) {
   str=str+value.name+" "
 }
     
@@ -45,7 +45,7 @@ jsonQuery('people[country=NZ].name', {data: data},function(){
 };
    console.log(response);
    res.send(response);
-}) ;
+
    
 
 })
