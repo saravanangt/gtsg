@@ -13,52 +13,20 @@ app.get('/index.htm', function (req, res) {
 app.post('/process_post', urlencodedParser, function (req, res) {
    // Prepare output in JSON format
    response = {
-
-  "type":1,
-
+"speech": "this text is spoken out loud if the platform supports voice interactions",
+"displayText": "this text is displayed visually",
+"messages": {
+  "type": 1,
+  "title": "card title",
+  "subtitle": "card text",
+  "imageUrl": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png"
+},
+"data": {
+ 
   "slack": {
-    "text": "Robert DeSoto added a new task",
-    "attachments": [
-        {
-            "fallback": "Plan a vacation",
-            "author_name": "Owner: rdesoto",
-            "title": "Plan a vacation",
-            "text": "I've been working too hard, it's time for a break.",
-            "actions": [
-                {
-                    "name": "action",
-                    "type": "button",
-                    "text": "Complete this task",
-                    "style": "",
-                    "value": "complete"
-                },
-                {
-                    "name": "tags_list",
-                    "type": "select",
-                    "text": "Add a tag...",
-                    "data_source": "static",
-                    "options": [
-                        {
-                            "text": "Launch Blocking",
-                            "value": "launch-blocking"
-                        },
-                        {
-                            "text": "Enhancement",
-                            "value": "enhancement"
-                        },
-                        {
-                            "text": "Bug",
-                            "value": "bug"
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
-
-}
-
+    "text": "This is a text response for Slack."
   }
+}
 
 };
    console.log(response);
