@@ -13,20 +13,20 @@ app.get('/index.htm', function (req, res) {
 
 app.post('/process_post', urlencodedParser, function (req, res) {
    // Prepare output in JSON format
-   var data = {
+var data = {
   people: [
     {name: 'Matt', country: 'NZ'},
     {name: 'Pete', country: 'AU'},
     {name: 'Mikey', country: 'NZ'}
   ]
 }
- var str='';
+var str='';
 var result=jsonQuery('people[country=NZ].name', {data: data}).value;
  for (var value of result.people) {
   str=str+value.name+" "
 }
     
-   response = {
+ response = {
 "speech": "this text is spoken out loud if the platform supports voice interactions",
 "displayText": "this text is displayed visually",
 "messages": {
