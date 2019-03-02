@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var jsonQuery = require('json-query');
 
 // Create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
@@ -12,6 +13,17 @@ app.get('/index.htm', function (req, res) {
 
 app.post('/process_post', urlencodedParser, function (req, res) {
    // Prepare output in JSON format
+   var data = {
+  people: [
+    {name: 'Matt', country: 'NZ'},
+    {name: 'Pete', country: 'AU'},
+    {name: 'Mikey', country: 'NZ'}
+  ]
+}
+ 
+jsonQuery('people[country=NZ].name', {
+  data: data
+}) 
    response = {
 "speech": "this text is spoken out loud if the platform supports voice interactions",
 "displayText": "this text is displayed visually",
@@ -24,7 +36,7 @@ app.post('/process_post', urlencodedParser, function (req, res) {
 "data": {
  
   "slack": {
-    "text": "This is a text response for Slack.Hurray Got it after long time"
+    "text": "This is a text response for Slack.Hurray Got it after long time"+data.people[0].name
   }
 }
 
