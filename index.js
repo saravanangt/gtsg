@@ -13,7 +13,11 @@ app.get('/index.htm', function (req, res) {
 app.post('/process_post', urlencodedParser, function (req, res) {
    // Prepare output in JSON format
    response = {
+<<<<<<< HEAD
   "type":1,
+=======
+      
+>>>>>>> b997a0f3cc042f5f7708d4e6d38ea8666819cee3
   "slack": {
     "text": "Robert DeSoto added a new task",
     "attachments": [
@@ -53,7 +57,11 @@ app.post('/process_post', urlencodedParser, function (req, res) {
             ]
         }
     ]
+<<<<<<< HEAD
 }
+=======
+  }
+>>>>>>> b997a0f3cc042f5f7708d4e6d38ea8666819cee3
 };
    console.log(response);
    res.send(response);
