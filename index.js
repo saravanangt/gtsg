@@ -40,7 +40,7 @@ jsonQuery('people[country=NZ].name', {
 "data": {
  
   "slack": {
-    "text": "This is a text response for Slack.Hurray Got it after long time"+data.people[0].name
+    "text": "This is a text response for Slack.Hurray Got it after long time"+str
   }
 }
 
