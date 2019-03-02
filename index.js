@@ -28,9 +28,7 @@ var result = jsonQuery('employee[**][*LOCATION=Singapore]', {data: data}).value;
   "type": "static_select"
  
 },
- "data": {
- 
-  "slack":  [
+ "data":   [
         {
 	"type": "actions",
 	"elements": [					
@@ -64,7 +62,7 @@ var result = jsonQuery('employee[**][*LOCATION=Singapore]', {data: data}).value;
 	}
 ]
     
-}
+
 }
 /* response = {
 "speech": "this text is spoken out loud if the platform supports voice interactions",
