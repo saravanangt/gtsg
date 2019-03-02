@@ -13,6 +13,8 @@ app.get('/index.htm', function (req, res) {
 app.post('/process_post', urlencodedParser, function (req, res) {
    // Prepare output in JSON format
    response = {
+  "type":1,
+  "slack": {
     "text": "Robert DeSoto added a new task",
     "attachments": [
         {
@@ -51,6 +53,7 @@ app.post('/process_post', urlencodedParser, function (req, res) {
             ]
         }
     ]
+}
 };
    console.log(response);
    res.send(response);
