@@ -13,20 +13,8 @@ app.get('/index.htm', function (req, res) {
 
 app.post('/process_post', urlencodedParser, function (req, res) {
    // Prepare output in JSON format
-var data = {
-  grouped_people: {
-    'friends': [
-      {name: 'Steve', country: 'NZ'},
-      {name: 'Jane', country: 'US'},
-      {name: 'Mike', country: 'AU'},
-      {name: 'Mary', country: 'NZ'},
-    ],
-    'enemies': [
-      {name: 'Evil Steve', country: 'AU'},
-      {name: 'Betty', country: 'NZ'}
-    ]
-  }
-}
+var fs = require('fs');
+var data = JSON.parse(fs.readFileSync('Staff.json', 'utf8'));
 var str='';
 var result = jsonQuery('grouped_people[**][*country=NZ]', {data: data}).value;
  setTimeout(function() {
