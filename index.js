@@ -14,6 +14,7 @@ app.get('/index.htm', function (req, res) {
 
 app.post('/process_post', urlencodedParser, function (req, res) {
    // Prepare output in JSON format
+   console.log(req.body);
 if(req.body.result.action=='gt_emp_report')
 {
    
