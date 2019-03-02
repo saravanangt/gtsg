@@ -54,7 +54,7 @@ var result = jsonQuery('grouped_people[**][*country=NZ]', {data: data}).value;
 };
    console.log(response);
    res.send(response);
-}, 3000);  
+}, 500);  
  
 
    
