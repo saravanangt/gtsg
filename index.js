@@ -20,11 +20,12 @@ app.post('/process_post', urlencodedParser, function (req, res) {
     {name: 'Mikey', country: 'NZ'}
   ]
 }
- var str=''
+ var str='';
 jsonQuery('people[country=NZ].name', {data: data},function(){
  for (var value of data.people) {
   str=str+value.name+" "
-}) 
+}
+}) ;
    
  
    response = {
