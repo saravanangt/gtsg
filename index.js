@@ -12,14 +12,14 @@ app.get('/index.htm', function (req, res) {
 
 app.post('/process_post', jsonParser, function (req, res) {
    // Prepare output in JSON format
-   console.log(req.body);
+   console.log(req.body.result.parameters.country);
 if(req.body.result.action=='gt_emp_report')
 {
    
 var data = JSON.parse(fs.readFileSync('Staff.json', 'utf8'));
 var str='';
 
-var result = jsonQuery(`employee[**][*LOCATION=Singapore]`, {data: data}).value;
+var result = jsonQuery(`employee[**][*LOCATION=req.body.result.parameters.country]`, {data: data}).value;
  
  setTimeout(function() {
       console.log(result);
