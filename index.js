@@ -21,7 +21,7 @@ var data = {
   ]
 }
 var str='';
-jsonQuery('people[country=NZ].name', {
+var result=jsonQuery('people[country=NZ].name', {
   data: data
 });
  for (var value of result.people) {
