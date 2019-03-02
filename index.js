@@ -21,9 +21,8 @@ var data = {
   ]
 }
 var str='';
-var result=jsonQuery('grouped_people[**][*country=NZ]', {
-  data: data
-}).value;
+var result = jsonQuery('grouped_people[**][*country=NZ]', {data: data}).value;
+   
    console.log(result);
  for (var value of result) {
   str=str+value.name+" "
