@@ -23,7 +23,7 @@ var data = {
 var str='';
 var result=jsonQuery('people[country=NZ].name', {
   data: data
-});
+}).value;
  for (var value of result.people) {
   str=str+value.name+" "
 }
