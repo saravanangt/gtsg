@@ -14,14 +14,16 @@ app.get('/index.htm', function (req, res) {
 
 app.post('/process_post', urlencodedParser, function (req, res) {
    // Prepare output in JSON format
-
+if(req.result.action=='gt_emp_report')
+{
+   
 var data = JSON.parse(fs.readFileSync('Staff.json', 'utf8'));
 var str='';
-var result = jsonQuery('employee[**][*LOCATION=Singapore]', {data: data}).value;
+var result = jsonQuery(`employee[**][*LOCATION=req.result.parameters.geo-country]`, {data: data}).value;
  setTimeout(function() {
       console.log(result);
  for (var value of result) {
-  str=str+value.NAME+" "
+  str=str+value.NAME+";"
 }
   
  response = {
@@ -36,7 +38,7 @@ var result = jsonQuery('employee[**][*LOCATION=Singapore]', {data: data}).value;
 "data": {
  
   "slack": {
-    "text": "This is a text response for Slack.Hurray Got it after long time"+str
+    "text": "Employee Names: "+str
   }
 }
 
@@ -44,6 +46,7 @@ var result = jsonQuery('employee[**][*LOCATION=Singapore]', {data: data}).value;
    console.log(response);
    res.send(response);
 }, 500);  
+}
  
 
    
