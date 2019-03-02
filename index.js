@@ -23,35 +23,12 @@ var result = jsonQuery('employee[**][*LOCATION=Singapore]', {data: data}).value;
  for (var value of result) {
   str=str+value.NAME+" "
 }
-    response={
-    [
-	{
-		"type": "actions",
-		"elements": [
-			{
-				"type": "conversations_select",
-				"placeholder": {
-					"type": "plain_text",
-					"text": "Select a conversation",
-					"emoji": true
-				}
-			},
-			{
-				"type": "channels_select",
-				"placeholder": {
-					"type": "plain_text",
-					"text": "Select a channel",
-					"emoji": true
-				}
-			},
-			{
-				"type": "users_select",
-				"placeholder": {
-					"type": "plain_text",
-					"text": "Select a user",
-					"emoji": true
-				}
-			},
+    response={"data": {
+ 
+  "slack":  [
+        {
+	"type": "actions",
+	"elements": [					
 			{
 				"type": "static_select",
 				"placeholder": {
@@ -75,22 +52,6 @@ var result = jsonQuery('employee[**][*LOCATION=Singapore]', {data: data}).value;
 							"emoji": true
 						},
 						"value": "value-1"
-					},
-					{
-						"text": {
-							"type": "plain_text",
-							"text": "Nifty item 3",
-							"emoji": true
-						},
-						"value": "value-2"
-					},
-					{
-						"text": {
-							"type": "plain_text",
-							"text": "Pretty good item 4",
-							"emoji": true
-						},
-						"value": "value-2"
 					}
 				]
 			}
@@ -98,7 +59,8 @@ var result = jsonQuery('employee[**][*LOCATION=Singapore]', {data: data}).value;
 	}
 ]
     
-    }
+}
+}
 /* response = {
 "speech": "this text is spoken out loud if the platform supports voice interactions",
 "displayText": "this text is displayed visually",
