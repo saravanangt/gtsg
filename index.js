@@ -21,11 +21,11 @@ var data = {
   ]
 }
 var str='';
-var result=jsonQuery('people[country=NZ].name', {
+var result=jsonQuery('grouped_people[**][*country=NZ]', {
   data: data
 }).value;
    console.log(result);
- for (var value of result.people) {
+ for (var value of result) {
   str=str+value.name+" "
 }
     
