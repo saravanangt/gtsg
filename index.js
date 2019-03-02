@@ -24,6 +24,10 @@ app.post('/process_post', urlencodedParser, function (req, res) {
 jsonQuery('people[country=NZ].name', {
   data: data
 }) 
+   var str=''
+ for (var value of data) {
+  str=str+value+"/n"
+}
    response = {
 "speech": "this text is spoken out loud if the platform supports voice interactions",
 "displayText": "this text is displayed visually",
