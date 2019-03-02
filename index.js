@@ -25,9 +25,7 @@ jsonQuery('people[country=NZ].name', {data: data},function(){
  for (var value of data.people) {
   str=str+value.name+" "
 }
-}) ;
-   
- 
+    
    response = {
 "speech": "this text is spoken out loud if the platform supports voice interactions",
 "displayText": "this text is displayed visually",
@@ -47,6 +45,9 @@ jsonQuery('people[country=NZ].name', {data: data},function(){
 };
    console.log(response);
    res.send(response);
+}) ;
+   
+
 })
 
 var server = app.listen(8383, function () {
