@@ -22,7 +22,7 @@ app.post('/process_post', urlencodedParser, function (req, res) {
 }
  var str=''
 jsonQuery('people[country=NZ].name', {
-  data: data;
+  data: data
   for (var value of data.people) {
   str=str+value.name+" "
 } 
