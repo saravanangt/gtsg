@@ -18,7 +18,7 @@ if(req.body.result.action=='gt_emp_report')
    
 var data = JSON.parse(fs.readFileSync('Staff.json', 'utf8'));
 var str='';
-console.log(req.body.result.parameters.geo-country)
+
 var result = jsonQuery(`employee[**][*LOCATION=req.body.result.parameters.geo-country]`, {data: data}).value;
  
  setTimeout(function() {
