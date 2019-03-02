@@ -22,7 +22,7 @@ var data = {
       {name: 'Mary', country: 'NZ'},
     ],
     'enemies': [
-      {name: 'Evil Steve', country: 'AU'}
+      {name: 'Evil Steve', country: 'AU'},
       {name: 'Betty', country: 'NZ'}
     ]
   }
