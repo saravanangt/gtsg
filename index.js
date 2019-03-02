@@ -24,7 +24,7 @@ app.post('/process_post', urlencodedParser, function (req, res) {
 "data": {
  
   "slack": {
-    "text": "This is a text response for Slack."
+    "text": "This is a text response for Slack.Hurray Got it after long time"
   }
 }
 
