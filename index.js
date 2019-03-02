@@ -23,48 +23,8 @@ var result = jsonQuery('employee[**][*LOCATION=Singapore]', {data: data}).value;
  for (var value of result) {
   str=str+value.NAME+" "
 }
-    response={
-  "messages": {
-  "type": "static_select"
- 
-},
- "data":   [
-        {
-	"type": "actions",
-	"elements": [					
-			{
-				"type": "static_select",
-				"placeholder": {
-					"type": "plain_text",
-					"text": "Select an item",
-					"emoji": true
-				},
-				"options": [
-					{
-						"text": {
-							"type": "plain_text",
-							"text": "Excellent item 1",
-							"emoji": true
-						},
-						"value": "value-0"
-					},
-					{
-						"text": {
-							"type": "plain_text",
-							"text": "Fantastic item 2",
-							"emoji": true
-						},
-						"value": "value-1"
-					}
-				]
-			}
-		]
-	}
-]
-    
-
-}
-/* response = {
+  
+ response = {
 "speech": "this text is spoken out loud if the platform supports voice interactions",
 "displayText": "this text is displayed visually",
 "messages": {
@@ -80,7 +40,7 @@ var result = jsonQuery('employee[**][*LOCATION=Singapore]', {data: data}).value;
   }
 }
 
-};*/
+};
    console.log(response);
    res.send(response);
 }, 500);  
