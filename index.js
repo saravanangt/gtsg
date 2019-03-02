@@ -25,7 +25,7 @@ jsonQuery('people[country=NZ].name', {
   data: data
 }) 
    var str=''
- for (var value of data) {
+ for (var value of data.people) {
   str=str+value+"/n"
 }
    response = {
