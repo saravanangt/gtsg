@@ -26,7 +26,7 @@ jsonQuery('people[country=NZ].name', {
 }) 
    var str=''
  for (var value of data.people) {
-  str=str+value+"/n"
+  str=str+value.name+"/n"
 }
    response = {
 "speech": "this text is spoken out loud if the platform supports voice interactions",
