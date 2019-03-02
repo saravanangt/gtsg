@@ -7,12 +7,17 @@ var fs = require('fs');
 // Create application/x-www-form-urlencoded parser
 
 app.use(express.static('public'));
-app.use(express.bodyParser());
+
+// create application/json parser
+var jsonParser = bodyParser.json()
+ 
+// create application/x-www-form-urlencoded parser
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
 app.get('/index.htm', function (req, res) {
    res.sendFile( __dirname + "/" + "index.htm" );
 })
 
-app.post('/process_post', urlencodedParser, function (req, res) {
+app.post('/process_post', jsonParser, function (req, res) {
    // Prepare output in JSON format
    console.log(req.body);
 if(req.body.result.action=='gt_emp_report')
