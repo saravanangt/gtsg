@@ -5,9 +5,9 @@ var jsonQuery = require('json-query');
 var fs = require('fs');
 
 // Create application/x-www-form-urlencoded parser
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 app.use(express.static('public'));
+app.use(express.bodyParser());
 app.get('/index.htm', function (req, res) {
    res.sendFile( __dirname + "/" + "index.htm" );
 })
