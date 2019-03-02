@@ -23,7 +23,12 @@ var result = jsonQuery('employee[**][*LOCATION=Singapore]', {data: data}).value;
  for (var value of result) {
   str=str+value.NAME+" "
 }
-    response={"data": {
+    response={
+  "messages": {
+  "type": "static_select"
+ 
+},
+ "data": {
  
   "slack":  [
         {
