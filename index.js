@@ -3,15 +3,8 @@ var app = express();
 var bodyParser = require('body-parser');
 var jsonQuery = require('json-query');
 var fs = require('fs');
-
-// Create application/x-www-form-urlencoded parser
-
 app.use(express.static('public'));
-
-// create application/json parser
 var jsonParser = bodyParser.json()
- 
-// create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 app.get('/index.htm', function (req, res) {
    res.sendFile( __dirname + "/" + "index.htm" );
@@ -25,8 +18,9 @@ if(req.body.result.action=='gt_emp_report')
    
 var data = JSON.parse(fs.readFileSync('Staff.json', 'utf8'));
 var str='';
- console.log(req.body.result.parameters.geo-country)
+console.log(req.body.result.parameters.geo-country)
 var result = jsonQuery(`employee[**][*LOCATION=req.body.result.parameters.geo-country]`, {data: data}).value;
+ 
  setTimeout(function() {
       console.log(result);
  for (var value of result) {
@@ -52,7 +46,7 @@ var result = jsonQuery(`employee[**][*LOCATION=req.body.result.parameters.geo-co
 };
    console.log(response);
    res.send(response);
-}, 500);  
+}, 3000);  
 }
  
 
