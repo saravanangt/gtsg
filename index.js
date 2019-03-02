@@ -17,11 +17,11 @@ app.post('/process_post', urlencodedParser, function (req, res) {
 
 var data = JSON.parse(fs.readFileSync('Staff.json', 'utf8'));
 var str='';
-var result = jsonQuery('grouped_people[**][*country=NZ]', {data: data}).value;
+var result = jsonQuery('employee[**][*LOCATION=Singapore]', {data: data}).value;
  setTimeout(function() {
       console.log(result);
  for (var value of result) {
-  str=str+value.name+" "
+  str=str+value.NAME+" "
 }
     
  response = {
