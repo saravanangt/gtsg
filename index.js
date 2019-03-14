@@ -46,7 +46,7 @@ var result = jsonQuery('employee[**][*LOCATION='+req.body.result.parameters.coun
 };
    console.log(response);
    res.send(response);
-}, 200);  
+}, 3000);  
 }
  
 
